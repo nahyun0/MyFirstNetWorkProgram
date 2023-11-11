@@ -1,0 +1,123 @@
+*문제: 2 + 5 = 7 나오게 하는 ( 조금 더 쉬운 버전) 
+# client 
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class CalcClientEx {
+    public static void main(String[] args) {
+        BufferedReader in = null;
+        BufferedWriter out = null;
+        Socket socket = null;
+        Scanner scanner = new Scanner(System.in);
+        try {
+            socket = new Socket("localhost", 283);
+            //데이터 송수신을 위한 input/output 스트림 생성 
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            while (true) {
+                System.out.print("please write: ex:24 + 42)>>"); // 프롬프트
+                //outputstream 통해서 보낼 데이터 송신 (클라이언트 ->서버 ) 
+                String outputMessage = scanner.nextLine(); // 키보드에서 수식 읽기
+                if (outputMessage.equalsIgnoreCase("bye")) {
+                    out.write(outputMessage + "\n"); // "bye" 문자열 전송
+                    out.flush();
+                    break; // 사용자가 "bye"를 입력한 경우 서버로 전송 후 연결 종료
+                }
+                out.write(outputMessage + "\n"); // 키보드에서 읽은 수식 문자열 전송
+                out.flush();
+                
+                //inputStream 통해서 데이터 수신(서버->클라이언트) 
+                String inputMessage = in.readLine(); // 서버로부터 계산 결과 수신
+                System.out.println("calculate result: " + inputMessage);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                scanner.close();
+                if (socket != null)
+                    socket.close(); // 클라이언트 소켓 닫기
+            } catch (IOException e) {
+                System.out.println("Error.");
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+
+
+# Server 
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class CalcServerEx {
+
+    public static String calc(String exp) {
+        StringTokenizer st = new StringTokenizer(exp, " ");
+        if (st.countTokens() != 3)
+            return "error";
+        String res = "";
+        int op1 = Integer.parseInt(st.nextToken());
+        String opcode = st.nextToken();
+        int op2 = Integer.parseInt(st.nextToken());
+        switch (opcode) {
+            case "+":
+                res = Integer.toString(op1 + op2);
+                break;
+            case "-":
+                res = Integer.toString(op1 - op2);
+                break;
+            case "*":
+                res = Integer.toString(op1 * op2);
+                break;
+            default:
+                res = "error";
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        BufferedReader in = null;
+        BufferedWriter out = null;
+        ServerSocket listener = null;
+        Socket socket = null;
+
+        try {
+            listener = new ServerSocket(283); // 서버 소켓 생성
+            System.out.println("Waiting.....");
+            socket = listener.accept(); // 클라이언트로부터 연결 요청 대기
+            System.out.println("Connect");
+            //데이터 송수신을 위한 input, output 스트림 생성 
+            in = new BufferedReader(
+                    new InputStreamReader(socket.getInputStream())); 
+            out = new BufferedWriter(
+                    new OutputStreamWriter(socket.getOutputStream()));
+            while (true) {
+            	//input 스트리 사용 데이터 수신 (클라이언트-> 서버)
+                String inputMessage = in.readLine();
+                if (inputMessage.equalsIgnoreCase("bye")) {
+                    System.out.println("클라이언트에서 연결을 종료하였음");
+                    break; // "bye"를 받으면 연결 종료
+                }
+                System.out.println(inputMessage); // 받은 메시지를 화면에 출력
+                //output 스트림 사용해서 데이터 송신 (서버->클라이언트)
+                String res = calc(inputMessage); // 계산. 계산 결과는 res
+                out.write(res + "\n"); // 계산 결과 문자열 전송
+                out.flush();
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (socket != null)
+                    socket.close(); // 통신용 소켓 닫기
+                if (listener != null)
+                    listener.close(); // 서버 소켓 닫기
+            } catch (IOException e) {
+                System.out.println("클라이언트와 채팅 중 오류가 발생했습니다.");
+            }
+        }
+    }
+}
