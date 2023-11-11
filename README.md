@@ -34,13 +34,13 @@ ServerPort=7899 이런식으로 저장)
 (예-localhost, port 1234)
  You may create a separate Class for configuration.
 
-(클라이언트)
+(클라이언트1)
 
 ![클라이언트 ex1](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/0d0318dc-ddee-4adb-82eb-7d320d5b0fb7)
 
-
+(클라이언트2 생성)
 ![클라이언트 ex2](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/a6e86430-ab7a-483c-ae68-c1f32c5bcf83)
-
+(클라이언트3 생성)
 ![클라이언트 ex3](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/a7957859-4404-455c-ba37-9874e83140b8)
 
 (서버 결과)
