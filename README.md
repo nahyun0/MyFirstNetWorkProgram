@@ -37,4 +37,11 @@ ServerPort=7899 이런식으로 저장)
  ![server](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/68003659-49c6-49e8-84d9-57916ff2c683)
  ![스크린샷 2023-11-12 010003](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/4c3b1006-5d2f-4311-8335-ac4d4efc8241)
 
+ ###(참조 개념 공부)
+ Socket 통신 이란 ? : 서버-클라이언트 간 데이터를 주고 받는 양방향 연결 지향성 통신 , 실시간 데이터 송수신 
+ 필요: ip 주소  와 port number 
+ 서버(server) : 데이터 제공 쪽 
+ 클라이언트(client) : 데이터 요청 받는 쪽 
+ ![참조](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/b504049a-2cae-4758-8416-4430b2129f2b)
+
 
