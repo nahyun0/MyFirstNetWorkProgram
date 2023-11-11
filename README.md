@@ -34,8 +34,18 @@ ServerPort=7899 이런식으로 저장)
 (예-localhost, port 1234)
  You may create a separate Class for configuration.
 
- ![server](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/68003659-49c6-49e8-84d9-57916ff2c683)
- ![스크린샷 2023-11-12 010003](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/4c3b1006-5d2f-4311-8335-ac4d4efc8241)
+(클라이언트)
+
+![클라이언트 ex1](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/38c3d498-69e6-4a09-8f48-e13a01d5e85d)
+
+![클라이언트 ex2](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/a6e86430-ab7a-483c-ae68-c1f32c5bcf83)
+
+![클라이언트 ex3](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/a7957859-4404-455c-ba37-9874e83140b8)
+
+(서버 결과)
+
+![server](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/23b50787-da68-4460-b04e-3f895eafd31a)
+
 
  ###(참조 개념 공부)
  Socket 통신 이란 ? : 서버-클라이언트 간 데이터를 주고 받는 양방향 연결 지향성 통신 , 실시간 데이터 송수신 
