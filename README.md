@@ -1,7 +1,7 @@
 # MyFirstNetWorkProgram
 
 # Calculator in the Cloud (계산기) 
-###Develop an Internet calculator program using Java
+### Develop an Internet calculator program using Java
 
 - Create both Client and Server programs using Java socket API
 
@@ -39,7 +39,7 @@ ServerPort=7899 이런식으로 저장)
 ![클라이언트 ex1](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/0d0318dc-ddee-4adb-82eb-7d320d5b0fb7)
 
 
-### (클라이언트2 생성)
+### (클라이언트2 생성
 
 ![클라이언트 ex2](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/a6e86430-ab7a-483c-ae68-c1f32c5bcf83)
 
