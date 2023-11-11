@@ -1,12 +1,14 @@
 # MyFirstNetWorkProgram
 
 # Calculator in the Cloud (계산기) 
-Develop an Internet calculator program using Java
-¤ Create both Client and Server programs using Java socket API
-¤ Get an (arithmetic) expression from the client side, and
+###Develop an Internet calculator program using Java
+
+- Create both Client and Server programs using Java socket API
+
+- Get an (arithmetic) expression from the client side, and
 Server solves the expression and sends the result back to the
 client
-¨ Define an “application-layer” protocol (communication
+- Define an “application-layer” protocol (communication
 message formats) for this application
 
 #과정 설명 
@@ -31,3 +33,8 @@ ServerPort=7899 이런식으로 저장)
  파일이 존재하지 않을 경우, default 정보 지정하여 처리
 (예-localhost, port 1234)
  You may create a separate Class for configuration.
+
+ ![server](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/68003659-49c6-49e8-84d9-57916ff2c683)
+ ![스크린샷 2023-11-12 010003](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/4c3b1006-5d2f-4311-8335-ac4d4efc8241)
+
+
