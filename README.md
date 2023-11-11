@@ -61,3 +61,4 @@ ServerPort=7899 이런식으로 저장)
 ![참조](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/b504049a-2cae-4758-8416-4430b2129f2b)
 
 
+![image](https://github.com/nahyun0/MyFirstNetWorkProgram/assets/106727030/d683f276-d0b5-4c12-acc9-b4a58c98de08)
